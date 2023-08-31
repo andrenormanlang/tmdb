@@ -1,0 +1,51 @@
+.movie-card {
+  height: 100%;
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    .card-title {
+      font-size: 1rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: auto;
+    }
+  }
+}
+
+.card-body {
+	text-align: center;
+}
+
+
+.release-date {
+	text-align: center;
+	font-size: 0.9rem;
+}
+
+.card-title,
+.card-text {
+	font-size: 0.9rem;
+}
+
+.movie-card:hover {
+	transform: scale(1.1);
+}
+
+.person-name,
+	.person-character {
+		font-size: 0.8rem;
+		text-decoration: none;
+	}
+
+	.person-name {
+		color: white;
+	}
+
+	.person-character {
+		color: lightgrey;
+	}
+
+.custom-nav {
+  max-height: 100vh;
+  overflow-y: auto;
+}

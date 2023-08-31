@@ -1,0 +1,85 @@
+:root {
+  --toggle-day-bg-color: #17a2b8;
+  --toggle-week-bg-color: #001F3F;
+  --toggle-text-color: #333;
+  --toggle-label-font-size: 14px;
+  --toggle-label-color: #17a2b8;
+  --toggle-handle-bg-color: black;
+  --toggle-handle-transition: 0.3s ease-in-out;
+}
+
+.toggle-button {
+  position: relative;
+  width: 100%;
+  max-width: 250px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: var(--toggle-day-bg-color);
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  transition: background-color var(--toggle-handle-transition);
+
+  .toggle-handle {
+    width: 50%;
+    height: 100%;
+    background-color: var(--toggle-handle-bg-color);
+    border-radius: 20px;
+    transition: transform var(--toggle-handle-transition);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .toggle-label {
+    width: 50%;
+    height: 100%;
+    font-size: var(--toggle-label-font-size);
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: var(--toggle-label-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease-in-out;
+    position: absolute;
+		white-space: nowrap;
+    top: 0;
+  }
+
+  .toggle-label.left {
+    left: 0;
+    transform: translateX(50%);
+  }
+
+  .toggle-label.right {
+    right: 0;
+    transform: translateX(-50%);
+  }
+
+  &.week .toggle-handle {
+    transform: translateX(100%);
+
+  }
+
+  &.week .toggle-label.left {
+    opacity: 0;
+  }
+
+  &.week .toggle-label.right {
+    opacity: 1;
+  }
+
+  &.day .toggle-handle {
+    transform: translateX(0);
+  }
+
+  &.day .toggle-label.left {
+    opacity: 1;
+  }
+
+  &.day .toggle-label.right {
+    opacity: 0;
+  }
+}
