@@ -1,17 +1,14 @@
 import { useParams } from 'react-router-dom';
-import { useQuery } from '@tanstack/react-query';
-import { getDirector } from '../services/tmdbAPI';
 import { Container, Row, Col, Card } from 'react-bootstrap';
+import useFetchDirector from '../hooks/useFetchDirector';
 
-const Director = () => {
-  // Get the director ID from the URL
-  const { id } = useParams<{ id: string }>();
-
-  // Fetch more information about the selected director
-  const { data: directorData, isFetching: isFetchingDirector, error: directorError } = useQuery(
-    ['director', id],
-    () => getDirector(Number(id))
-  );
+const Director= () => {
+  const { id } = useParams<{ id?: string }>(); // Notice the type `id?: string`
+  const {
+    directorData,
+    isFetchingDirector,
+    directorError
+  } = useFetchDirector(id || '');
 
   if (isFetchingDirector) {
     return <p>Loading...</p>;

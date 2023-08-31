@@ -4,24 +4,6 @@ import { useTrending } from "../hooks/useTrending";
 import { Link as RouterLink } from 'react-router-dom';
 
 const HomePage = () => {
-  // const [timeWindow, setTimeWindow] = useState("day");
-  // const { trendingMovies, isLoading, error } = useTrending(timeWindow);
-
-  // if (isLoading) {
-  //   return <p>Loading...</p>;
-  // }
-
-  // if (error) {
-  //   return <p>Error fetching trending movies</p>;
-  // }
-
-  // const handleToggleTimeWindow = () => {
-  //   setTimeWindow((prevTimeWindow) => (prevTimeWindow === "day" ? "week" : "day"));
-  // };
-
-  // const timeWindowText = timeWindow === "day" ? "Today" : "This week'";
-  // const backgroundColor = timeWindow === "day" ? "#001F3F" : "#17a2b8"; // You can adjust the colors
-
 	const [timeWindow, setTimeWindow] = useState("day");
   const { trendingMovies, isLoading, error } = useTrending(timeWindow);
 
@@ -36,21 +18,19 @@ const HomePage = () => {
   return (
 		<Container>
 		 <h1 className="mb-4">Welcome to TMDB!</h1>
-      <div className="trending-container">
-        <div className="trending-label">Trending</div>
+		 <div className="trending-container mb-3">
+        <div className="trending-label"><span className="trending">Trending</span></div>
         <div
-          // className={`toggle-button ${timeWindow}`}
-						className={`toggle-button ${timeWindow === "day" ? "day" : "week"}`}
-						onClick={() => {
-							setTimeWindow((prevTimeWindow) =>
-								prevTimeWindow === "day" ? "week" : "day"
-							);
-						}}
-					>
+          className={`toggle-button ${timeWindow === "day" ? "day" : "week"}`}
+          onClick={() => {
+            setTimeWindow((prevTimeWindow) =>
+              prevTimeWindow === "day" ? "week" : "day"
+            );
+          }}
+        >
           <div className="toggle-handle">
-            {/* {timeWindow === "day" ? "Today" : "This Week"} */}
-						<div className="toggle-label left">Today</div>
-						<div className="toggle-label right">This Week</div>
+            <div className="toggle-label left">Today</div>
+            <div className="toggle-label right">This Week</div>
           </div>
         </div>
       </div>

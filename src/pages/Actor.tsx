@@ -1,21 +1,19 @@
 import { useParams } from 'react-router-dom';
-import { useQuery } from '@tanstack/react-query';
-import { getActor, getActorCredits } from '../services/tmdbAPI';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import { Link as RouterLink } from 'react-router-dom';
+import useFetchActor from '../hooks/useFetchActor';
 
 const Actor = () => {
-  const { id } = useParams<{ id: string }>();
+  const { id } = useParams<{ id?: string }>();
 
-  const { data: actorData, isFetching: isFetchingActor, error: actorError } = useQuery(
-    ['actor', id],
-    () => getActor(Number(id))
-  );
-
-  const { data: creditsData, isFetching: isFetchingCredits, error: creditsError } = useQuery(
-    ['actorCredits', id],
-    () => getActorCredits(Number(id))
-  );
+	const {
+    actorData,
+    isFetchingActor,
+    actorError,
+    creditsData,
+    isFetchingCredits,
+    creditsError
+  } = useFetchActor(id || '')
 
   if (isFetchingActor || isFetchingCredits) {
     return <p>Loading...</p>;

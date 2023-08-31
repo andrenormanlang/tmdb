@@ -1,1 +1,72 @@
+@media (min-width: 768px) {
+  .navbar {
+    background-color: #293241;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 
+		.tmdb-logo {
+			color: #f1390b;
+			font-size: 2rem;
+		}
+
+    .nav-link {
+      color: #f8f9fa;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #e76f51;
+      }
+
+      &.active {
+        color: #e76f51;
+      }
+    }
+
+    .form-control {
+      height: 40px;
+      width: 250px;
+    }
+
+    .btn-outline-success {
+      height: 40px;
+      background-color: #2a9d8f;
+      color: white;
+			font-weight: 600;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    .navbar-brand {
+      font-size: 1.5rem;
+    }
+
+    .navbar-toggler {
+      color: #333; // Icon color
+      border-color: #333; // Border color
+    }
+
+    .navbar-collapse {
+      background-color: #293241; // Background color of the collapsed menu
+      border-top: 2px solid #e76f51; // Border above the collapsed menu
+    }
+
+
+
+    .nav-link {
+     color: white;; // Link color
+      padding: 1rem; // Increase padding for touch interaction
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #e6522e; // Hover color
+      }
+
+      &.active {
+        color: #ec441a; // Active link color
+      }
+
+
+    }
+  }
+}

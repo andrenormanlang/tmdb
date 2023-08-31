@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-// import { BrowserRouter, HashRouter } from 'react-router-dom'; // Import HashRouter
-import { BrowserRouter } from 'react-router-dom'; // Import HashRouter
+import { HashRouter } from 'react-router-dom'
+// import { BrowserRouter } from 'react-router-dom'
 import App from './App.tsx';
 
 const queryClient = new QueryClient({
@@ -15,21 +15,12 @@ const queryClient = new QueryClient({
   },
 });
 
-// ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-//   <React.StrictMode>
-//     <QueryClientProvider client={queryClient}>
-//       <HashRouter> {/* Use HashRouter instead of BrowserRouter */}
-//         <App />
-//       </HashRouter>
-//     </QueryClientProvider>
-//   </React.StrictMode>
-// );
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter> {/* Use HashRouter instead of BrowserRouter */}
+      <HashRouter> {/* Use HashRouter instead of BrowserRouter */}
         <App />
-      </BrowserRouter>
+      </HashRouter>
     </QueryClientProvider>
   </React.StrictMode>
 );

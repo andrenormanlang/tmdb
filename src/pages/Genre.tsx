@@ -1,59 +1,24 @@
-import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { useQuery } from "@tanstack/react-query";
-import { getMoviesByGenre, getGenres } from "../services/tmdbAPI";
 import { Container, Row, Col, Card, Badge } from "react-bootstrap";
 import CustomPagination from "../components/CustomPagination";
+import useFetchGenreMovies from "../hooks/useFetchGenre";
 
-const Genre: React.FC = () => {
-	const { genreId } = useParams<{ genreId?: string }>();
-	const [page, setPage] = useState(
-		parseInt(localStorage.getItem("currentPage") || "1")
-	);
+const Genre = () => {
+  const { genreId } = useParams<{ genreId?: string }>();
 
-	useEffect(() => {
-		// Update the page in local storage only when switching to a different genre
-		if (localStorage.getItem("currentGenre") !== genreId) {
-			setPage(1);
-			localStorage.setItem("currentPage", "1");
-			localStorage.setItem("currentGenre", genreId || "");
-		}
-	}, [genreId]);
+  // Use the custom hook to fetch genre-related data
+  const {
+    genreData,
+    movies,
+    error,
+    isFetching,
+    handlePreviousPage,
+    handleNextPage
+  } = useFetchGenreMovies(genreId || '');
 
-	const { data: genreData } = useQuery(["genres"], getGenres);
-
-	const {
-		data: movies,
-		error,
-		isFetching,
-	} = useQuery(
-		["movies", genreId, page], // Include page in the query key
-		() => getMoviesByGenre(parseInt(genreId ?? ""), page),
-		{
-			refetchOnWindowFocus: false,
-		}
-	);
-
-	const handlePreviousPage = () => {
-		if (page > 1) {
-			setPage((prevPage) => {
-				const newPage = prevPage - 1;
-				localStorage.setItem("currentPage", newPage.toString());
-				return newPage;
-			});
-		}
-	};
-
-	const handleNextPage = () => {
-		if (movies?.page && movies?.page < movies?.total_pages) {
-			setPage((prevPage) => {
-				const newPage = prevPage + 1;
-				localStorage.setItem("currentPage", newPage.toString());
-				return newPage;
-			});
-		}
-	};
-
+	if (isFetching) {
+    return <p>Loading...</p>;
+  }
 	if (error) {
 		return <div>Error fetching movies</div>;
 	}

@@ -10,6 +10,8 @@ import { getGenres } from "../services/tmdbAPI";
 import { Genres } from "../types/tmdb.types";
 import { NavLink, Link, useNavigate } from "react-router-dom";
 
+
+
 function Navigation() {
 	const navigate = useNavigate();
 	const { data: genres } = useQuery<Genres>(["genres"], getGenres);
@@ -30,7 +32,7 @@ function Navigation() {
 	return (
 		<Navbar expand="lg" className="bg-body-tertiary">
 			<Container fluid className="nav-text">
-				<Navbar.Brand as={Link} to="/">
+				<Navbar.Brand className="tmdb-logo" as={Link} to="/">
 					TMDB
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="navbarScroll" />
@@ -64,23 +66,23 @@ function Navigation() {
 							</Button>
 						</Nav.Item>
 					</Nav>
-					<Form className="d-flex" onSubmit={handleSearch}>
-						<Form.Control
-							type="search"
-							placeholder="Search"
-							className="me-2"
-							aria-label="Search"
-							value={searchQuery}
-							onChange={(e) => setSearchQuery(e.target.value)}
-						/>
-						<Button
-							type="submit"
-							variant="outline-success"
-							disabled={isSearchButtonDisabled}
-						>
-							Search for a movie
-						</Button>
-					</Form>
+					<Form className="d-flex flex-column flex-lg-row" onSubmit={handleSearch}>
+            <Form.Control
+              type="search"
+              placeholder="Search for a movie..."
+              className="me-2 mb-2 mb-lg-0"
+              aria-label="Search"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            <Button
+              type="submit"
+              variant="outline-success"
+              disabled={isSearchButtonDisabled}
+            >
+              Search
+            </Button>
+          </Form>
 				</Navbar.Collapse>
 			</Container>
 			<Modal show={showModal} onHide={handleCloseModal} fullscreen>
