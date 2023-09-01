@@ -1,30 +1,29 @@
 .movie-card {
-  height: 100%;
-  .card-body {
-    display: flex;
-    flex-direction: column;
-    .card-title {
-      font-size: 1rem;
-      font-weight: bold;
-      text-align: center;
-      margin-bottom: auto;
-    }
-  }
+	height: 100%;
+	.card-body {
+		display: flex;
+		flex-direction: column;
+		.card-title {
+			font-size: 1rem;
+			font-weight: bold;
+			text-align: center;
+			margin-bottom: auto;
+		}
+	}
 }
 
 .info-container {
-  position: relative;
-  background-color: rgba(0, 0, 0, 0.8);
-  border-radius: 10px;
-  padding: 20px;
-  color: #fff; 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	position: relative;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-radius: 10px;
+	padding: 20px;
+	color: #fff;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .card-body {
 	text-align: center;
 }
-
 
 .release-date {
 	text-align: center;
@@ -45,20 +44,20 @@
 }
 
 .person-name,
-	.person-character {
-		font-size: 0.8rem;
-		text-decoration: none;
-	}
+.person-character {
+	font-size: 0.8rem;
+	text-decoration: none;
+}
 
-	.person-name {
-		color: white;
-	}
+.person-name {
+	color: white;
+}
 
-	.person-character {
-		color: lightgrey;
-	}
+.person-character {
+	color: lightgrey;
+}
 
 .custom-nav {
-  max-height: 100vh;
-  overflow-y: auto;
+	max-height: 100vh;
+	overflow-y: auto;
 }

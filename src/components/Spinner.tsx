@@ -1,8 +1,8 @@
-import { useIsFetching } from "@tanstack/react-query"
-import { RotatingTriangles } from "react-loader-spinner"
+import { useIsFetching } from "@tanstack/react-query";
+import { RotatingTriangles } from "react-loader-spinner";
 
 const Spinner = () => {
-	const isFetching = useIsFetching()
+	const isFetching = useIsFetching();
 
 	return isFetching ? (
 		<div id="loading-spinner-wrapper" className="spinner-container">
@@ -15,9 +15,7 @@ const Spinner = () => {
 				wrapperClass="rotating-triangels-wrapper"
 			/>
 		</div>
-	) : null
-}
+	) : null;
+};
 
-export default Spinner
-
-
+export default Spinner;

@@ -125,7 +125,6 @@ export const searchMovies = (query: string, page: number) => {
 /**
  * Get movies trending in the day and week ranges
  */
-export const getTrendingMovies =  (timeWindow: string) => {
-  return get<Movies>(`/trending/movie/${timeWindow}`)
-
+export const getTrendingMovies = (timeWindow: string) => {
+	return get<Movies>(`/trending/movie/${timeWindow}`);
 };

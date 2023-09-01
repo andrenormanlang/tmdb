@@ -1,72 +1,68 @@
 @media (min-width: 768px) {
-  .navbar {
-    background-color: #293241;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+	.navbar {
+		background-color: #293241;
+		box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 
 		.tmdb-logo {
 			color: #f1390b;
 			font-size: 2rem;
 		}
 
-    .nav-link {
-      color: #f8f9fa;
-      transition: color 0.3s ease;
+		.nav-link {
+			color: #f8f9fa;
+			transition: color 0.3s ease;
 
-      &:hover {
-        color: #e76f51;
-      }
+			&:hover {
+				color: #e76f51;
+			}
 
-      &.active {
-        color: #e76f51;
-      }
-    }
+			&.active {
+				color: #e76f51;
+			}
+		}
 
-    .form-control {
-      height: 40px;
-      width: 250px;
-    }
+		.form-control {
+			height: 40px;
+			width: 250px;
+		}
 
-    .btn-outline-success {
-      height: 40px;
-      background-color: #2a9d8f;
-      color: white;
+		.btn-outline-success {
+			height: 40px;
+			background-color: #2a9d8f;
+			color: white;
 			font-weight: 600;
-    }
-  }
+		}
+	}
 }
 
 @media (max-width: 767px) {
-  .navbar {
-    .navbar-brand {
-      font-size: 1.5rem;
-    }
+	.navbar {
+		.navbar-brand {
+			font-size: 1.5rem;
+		}
 
-    .navbar-toggler {
-      color: #333;
-      border-color: #333;
-    }
+		.navbar-toggler {
+			color: #333;
+			border-color: #333;
+		}
 
-    .navbar-collapse {
-      background-color: #293241;
-      border-top: 2px solid #e76f51;
-    }
+		.navbar-collapse {
+			background-color: #293241;
+			border-top: 2px solid #e76f51;
+		}
 
+		.nav-link {
+			color: white;
+			padding: 1rem;
+			transition: color 0.3s ease;
 
+			&:hover {
+				color: #e6522e;
+			}
 
-    .nav-link {
-     color: white;;
-      padding: 1rem;
-      transition: color 0.3s ease;
-
-      &:hover {
-        color: #e6522e;
-      }
-
-      &.active {
-        color: #ec441a; 
-      }
-
-
-    }
-  }
+			&.active {
+				color: #ec441a;
+			}
+		}
+	}
 }

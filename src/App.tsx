@@ -12,13 +12,12 @@ import Movie from "./pages/Movie";
 import Actor from "./pages/Actor";
 import Popular from "./pages/Popular";
 import TopRated from "./pages/TopRated";
-import Genre from './pages/Genre'
+import Genre from "./pages/Genre";
 import Director from "./pages/Director";
 import SearchResults from "./pages/Search";
 import Upcoming from "./pages/Upcoming";
 import Last10Visits from "./pages/Last10Visits";
 import Spinner from "./components/Spinner";
-
 
 const App = () => {
 	return (
@@ -35,7 +34,7 @@ const App = () => {
 					<Route path="/:id" element={<Movie />} />
 					<Route path="person/:id" element={<Actor />} />
 					<Route path="person/:id" element={<Director />} />
-					<Route path="/genre/:genreId" element={<Genre/>} />
+					<Route path="/genre/:genreId" element={<Genre />} />
 					<Route path="/search" element={<SearchResults />} />
 					<Route path="/last10visits" element={<Last10Visits />} />
 					<Route path="*" element={<NotFound />} />

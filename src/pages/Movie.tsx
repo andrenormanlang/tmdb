@@ -9,7 +9,7 @@ const Movie: React.FC = () => {
 	const { movieData, isFetching, error } = useMovieLS();
 
 	if (isFetching) {
-		return 
+		return;
 	}
 
 	if (error) {
