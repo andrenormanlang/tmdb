@@ -7,6 +7,7 @@ interface MovieInfoProps {
 const MovieInfo: React.FC<MovieInfoProps> = ({ movieData }) => {
   return (
 		<>
+		<div className="info-container">
 			<h2>Overview</h2>
       <p>{movieData.overview}</p>
       <h2>Release Date</h2>
@@ -17,6 +18,8 @@ const MovieInfo: React.FC<MovieInfoProps> = ({ movieData }) => {
           day: '2-digit',
         })}
       </p>
+			<p>{movieData.runtime} minutes</p>
+		</div>
 		</>
 
 

@@ -13,4 +13,3 @@ const Last10Visits = () => {
 };
 
 export default Last10Visits;
-

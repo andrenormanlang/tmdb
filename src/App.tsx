@@ -2,7 +2,6 @@ import Container from "react-bootstrap/Container";
 import { Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
 
-
 import HomePage from "./pages/HomePage";
 import NotFound from "./pages/NotFound";
 
@@ -18,11 +17,14 @@ import Director from "./pages/Director";
 import SearchResults from "./pages/Search";
 import Upcoming from "./pages/Upcoming";
 import Last10Visits from "./pages/Last10Visits";
+import Spinner from "./components/Spinner";
+
 
 const App = () => {
 	return (
 		<div id="App">
 			<Navigation />
+			<Spinner />
 			<Container className="py-3">
 				<Routes>
 					<Route path="/" element={<HomePage />} />

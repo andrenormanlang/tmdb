@@ -12,12 +12,25 @@
   }
 }
 
+.info-container {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  padding: 20px;
+  color: #fff; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 .card-body {
 	text-align: center;
 }
 
 
 .release-date {
+	text-align: center;
+	font-size: 0.9rem;
+}
+.runtime {
 	text-align: center;
 	font-size: 0.9rem;
 }

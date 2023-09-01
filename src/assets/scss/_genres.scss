@@ -1,0 +1,102 @@
+/* Sample SCSS for Genre Badges */
+
+.genre-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  margin: 2px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.genre-action {
+  background-color: #f44336;
+  color: white;
+}
+
+.genre-adventure {
+  background-color: #2196F3;
+  color: white;
+}
+
+.genre-animation {
+  background-color: #4CAF50;
+}
+
+.genre-comedy {
+  background-color: #FFC107;
+  color: #333;
+}
+
+.genre-crime {
+  background-color: #795548;
+  color: white;
+}
+
+.genre-documentary {
+  background-color: #607D8B;
+  color: white;
+}
+
+.genre-drama {
+  background-color: #673AB7;
+  color: white;
+}
+
+.genre-family {
+  background-color: #FF5722;
+  color: white;
+}
+
+.genre-fantasy {
+  background-color: #9C27B0;
+  color: white;
+}
+
+.genre-history {
+  background-color: #8BC34A;
+  color: #333;
+}
+
+.genre-horror {
+  background-color: #000;
+}
+
+.genre-music {
+  background-color: #FF9800;
+  color: #333;
+}
+
+.genre-mystery {
+  background-color: #2196F3;
+  color: white;
+}
+
+.genre-romance {
+  background-color: #E91E63;
+  color: white;
+}
+
+.genre-science-fiction {
+  background-color: #03A9F4;
+}
+
+.genre-tv-movie {
+  background-color: #9E9E9E;
+  color: white;
+}
+
+.genre-thriller {
+  background-color: #607D8B;
+  color: white;
+}
+
+.genre-war {
+  background-color: #795548;
+  color: white;
+}
+
+.genre-western {
+  background-color: #8D6E63;
+  color: white;
+}

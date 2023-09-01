@@ -1,12 +1,12 @@
 import { useQuery } from '@tanstack/react-query';
 import { getLatestCinemaMovies } from '../services/tmdbAPI';
-import LatestMoviesList from '../components/LatestMoviesGrid'; 
+import MoviesGridWithReleaseDate from '../components/MoviesGridWithReleaseDate';
 
 const Latest = () => {
   const { data, isFetching, error } = useQuery(['latestCinemaMovies'], getLatestCinemaMovies);
 
   if (isFetching) {
-    return <p>Loading...</p>;
+    return 
   }
 
   if (error) {
@@ -20,7 +20,13 @@ const Latest = () => {
     (a, b) => Number(new Date(b.release_date)) - Number(new Date(a.release_date))
   );
 
-  return <LatestMoviesList movies={sortedMovies} />;
+  return(
+		<>
+			<h1 className="mb-4">New Releases!</h1>
+			<MoviesGridWithReleaseDate movies={sortedMovies} />;
+		</>
+
+	)
 };
 
 export default Latest;

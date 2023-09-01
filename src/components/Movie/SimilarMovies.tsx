@@ -12,7 +12,7 @@ const SimilarMovies: React.FC<SimilarMoviesProps> = ({
   return (
 		<>
       <h2>Similar Films</h2>
-      <Row xs={2} md={4} className="g-4">
+      <Row lg={5} md={4} sm={2}  className="g-4">
         {movieData.similar?.results.map((movie) => (
           <Col key={movie.id}>
             <Card className="movie-card">

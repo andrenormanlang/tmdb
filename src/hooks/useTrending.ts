@@ -9,7 +9,7 @@ export const useTrending = (initialTimeWindow: string) => {
     return data.results;
   };
 
-  const { data, error, isLoading } = useQuery(
+  const { data, error, isFetching } = useQuery(
     ["trending", initialTimeWindow],
     () => fetchTrendingMovies(initialTimeWindow)
   );
@@ -22,8 +22,10 @@ export const useTrending = (initialTimeWindow: string) => {
 
   return {
     trendingMovies: data,
-    isLoading,
+    isFetching,
     error,
     toggleTimeWindow,
   };
 };
+
+export default useTrending

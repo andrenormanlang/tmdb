@@ -1,9 +1,9 @@
 :root {
   --toggle-day-bg-color: #17a2b8;
   --toggle-week-bg-color: white;
-  --toggle-text-color: blue /* Change to desired color */
+  --toggle-text-color: blue
   --toggle-label-font-size: 0.5rem;
-  --toggle-label-color: #ff6347; /* Change to desired color */
+  --toggle-label-color: #ff6347;
   --toggle-handle-bg-color: black;
   --toggle-handle-transition: 0.3s ease-in-out;
 }
@@ -21,7 +21,7 @@
   text-transform: uppercase;
   color: var(--toggle-label-color);
   white-space: nowrap;
-  margin-right: 10px; /* Adjust as needed */
+  margin-right: 10px; 
 }
 
 .toggle-button {

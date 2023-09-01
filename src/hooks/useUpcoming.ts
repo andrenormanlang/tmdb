@@ -1,24 +1,16 @@
-import { useLocation, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { searchMovies } from "../services/tmdbAPI";
+import { getUpcomingCinemaMovies } from "../services/tmdbAPI";
+import { useLocation, useNavigate } from "react-router-dom";
 
-export const useSearchResults = () => {
+const useUpcoming = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  const query = queryParams.get("query") || "";
   const page = queryParams.get("page") || "1";
   const navigate = useNavigate();
 
-  const {
-    data: searchResults,
-    error,
-    isFetching,
-  } = useQuery(
-    ["search", query, page], 
-    () => searchMovies(query || "", parseInt(page)),
-    {
-      refetchOnWindowFocus: false,
-    }
+  const { data, isFetching, error } = useQuery(
+    ["UpcomingCinemaMovies", page],
+    () => getUpcomingCinemaMovies(parseInt(page))
   );
 
   const handlePreviousPage = () => {
@@ -30,10 +22,7 @@ export const useSearchResults = () => {
   };
 
   const handleNextPage = () => {
-    if (
-      searchResults?.page &&
-      searchResults?.page < searchResults?.total_pages
-    ) {
+    if (data?.page && data?.page < data?.total_pages) {
       const newPage = (parseInt(page) + 1).toString();
       queryParams.set("page", newPage);
       navigate(`?${queryParams.toString()}`);
@@ -41,13 +30,13 @@ export const useSearchResults = () => {
   };
 
   return {
-    searchResults,
-    error,
+    data,
     isFetching,
+    error,
+    page: parseInt(page),
     handlePreviousPage,
     handleNextPage,
-		query
   };
-};
+}
 
-export default useSearchResults;
+export default useUpcoming;

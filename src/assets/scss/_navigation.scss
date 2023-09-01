@@ -42,28 +42,28 @@
     }
 
     .navbar-toggler {
-      color: #333; // Icon color
-      border-color: #333; // Border color
+      color: #333;
+      border-color: #333;
     }
 
     .navbar-collapse {
-      background-color: #293241; // Background color of the collapsed menu
-      border-top: 2px solid #e76f51; // Border above the collapsed menu
+      background-color: #293241;
+      border-top: 2px solid #e76f51;
     }
 
 
 
     .nav-link {
-     color: white;; // Link color
-      padding: 1rem; // Increase padding for touch interaction
+     color: white;;
+      padding: 1rem;
       transition: color 0.3s ease;
 
       &:hover {
-        color: #e6522e; // Hover color
+        color: #e6522e;
       }
 
       &.active {
-        color: #ec441a; // Active link color
+        color: #ec441a; 
       }
 
 

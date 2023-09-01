@@ -19,7 +19,7 @@ const instance = axios.create({
 	},
 	params: {
 		include_adult: "false",
-		region: "CA",
+		region: "de",
 		language: "en-US",
 	},
 });
@@ -58,8 +58,8 @@ export const getMostPopularMovies = () => {
 /**
  * Get the 10-20 most top rated movies
  */
-export const getTopRatedMovies = () => {
-	return get<Movies>(`/movie/top_rated?page=1`);
+export const getTopRatedMovies = (page: number) => {
+	return get<Movies>(`/movie/top_rated?page=${page}`);
 };
 
 /**

@@ -1,43 +1,36 @@
-import { useQuery } from '@tanstack/react-query';
-import { getTopRatedMovies } from '../services/tmdbAPI';
-import { Container, Row, Col, Card } from 'react-bootstrap';
-import { Link as RouterLink } from 'react-router-dom';
+import { useState } from "react";
+import { Container } from "react-bootstrap";
+import CustomPagination from "../components/CustomPagination";
+import MoviesGridWithReleaseDate from "../components/MoviesGridWithReleaseDate";
+import useTopRated from "../hooks/useTopRated";
 
 const TopRated = () => {
-  const { data, isFetching, error } = useQuery(['topRatedMovies'], getTopRatedMovies);
+  const [page, setPage] = useState(1);
+  const { data, isFetching, error } = useTopRated(page);
 
   if (isFetching) {
-    return <p>Loading...</p>;
+    return
   }
 
   if (error) {
     return <p>Error fetching movies</p>;
   }
 
-  // Use optional chaining and nullish coalescing to handle undefined data
   const movieResults = data?.results ?? [];
 
   return (
     <Container>
       <h1 className="mb-4">Top Rated Movies!</h1>
-      <Row lg={4} md={4} sm={2} className="g-2">
-        {movieResults.map((movie) => (
-          <Col key={movie.id}>
-            <RouterLink to={`/${movie.id}`} className="text-decoration-none">
-              <Card className="movie-card">
-                <Card.Img variant="top" src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} />
-                <Card.Body>
-                  <Card.Title className='five-em'>{movie.title}</Card.Title>
-                  {/* <Card.Text>{movie.overview}</Card.Text> */}
-                </Card.Body>
-              </Card>
-            </RouterLink>
-          </Col>
-        ))}
-      </Row>
+      <MoviesGridWithReleaseDate movies={movieResults} />
+      <CustomPagination
+        page={page}
+        totalPages={data?.total_pages}
+        isFetching={isFetching}
+        handlePreviousPage={() => setPage((prevPage) => prevPage - 1)}
+        handleNextPage={() => setPage((prevPage) => prevPage + 1)}
+      />
     </Container>
   );
 };
-
 
 export default TopRated;

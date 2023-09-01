@@ -6,6 +6,7 @@
 @import "_pagination";
 @import "_toggling_button";
 @import "_navigation";
+@import "_genres";
 
 body {
   font-family: 'Montserrat', sans-serif;
@@ -27,7 +28,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 
-  // Add the darkened overlay
+
   &::before {
     content: "";
     position: fixed;
@@ -35,12 +36,26 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); // Adjust opacity as needed
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: -1;
   }
 
   h1 {
     font-weight: bold;
-    color: #e84f28; // Change this color to your desired color
+    color: #e84f28; 
   }
+
+	.spinner-container {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: rgba(0, 0, 0, 0.5);
+		z-index: 9999;
+	}
+
 }

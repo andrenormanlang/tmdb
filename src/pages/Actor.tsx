@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import { Link as RouterLink } from 'react-router-dom';
-import useFetchActor from '../hooks/useFetchActor';
+import useActor from '../hooks/useActor';
 
 const Actor = () => {
   const { id } = useParams<{ id?: string }>();
@@ -13,10 +13,10 @@ const Actor = () => {
     creditsData,
     isFetchingCredits,
     creditsError
-  } = useFetchActor(id || '')
+  } = useActor(id || '')
 
   if (isFetchingActor || isFetchingCredits) {
-    return <p>Loading...</p>;
+    return
   }
 
   if (actorError || creditsError) {
