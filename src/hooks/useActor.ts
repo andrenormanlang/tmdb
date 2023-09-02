@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { getActor, getActorCredits } from "../services/tmdbAPI";
-import { Crew_Member } from "../types/Actor.type";
+import { Actor} from "../types/Actor.type";
 import { Credits } from "../types/Movie.types";
 
 const useActor = (actorId: string) => {
@@ -8,7 +8,7 @@ const useActor = (actorId: string) => {
 		data: actorData,
 		isFetching: isFetchingActor,
 		error: actorError,
-	} = useQuery<Crew_Member>(["actor", actorId], () =>
+	} = useQuery<Actor>(["actor", actorId], () =>
 		getActor(Number(actorId))
 	);
 

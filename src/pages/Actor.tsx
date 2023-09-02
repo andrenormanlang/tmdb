@@ -51,7 +51,9 @@ const Actor = () => {
 					</Col>
 					<Col lg={8}>
 						<h2>Biography</h2>
-						<p>{actorData.biography}</p>
+						<div className="info-container">
+							<p>{actorData.biography}</p>
+						</div>
 						<h2>Filmography</h2>
 						<Row xs={2} md={4} className="g-4">
 							{creditsData.cast.map((credit) => (

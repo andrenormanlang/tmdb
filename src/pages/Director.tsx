@@ -50,7 +50,7 @@ const Director = () => {
 		}
 	}
 
-	return null; // No director with the job title "Director" found
+	return null; 
 };
 
 export default Director;
