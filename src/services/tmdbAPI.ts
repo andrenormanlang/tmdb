@@ -5,7 +5,8 @@ import axios from "axios";
 import { MovieType } from "../types/Movie.types";
 import { Genres, Movies } from "../types/tmdb.types";
 import { Credits } from "../types/Movie.types";
-import { Crew_Member } from "../types/Actor.type";
+import { Actor } from "../types/Actor.type";
+import { Crew } from "../types/Movie.types";
 
 const BASE_URL = "https://api.themoviedb.org/3";
 const VITE_ACCESS_TOKEN = import.meta.env.VITE_ACCESS_TOKEN;
@@ -91,7 +92,7 @@ export const getMovie = (id: number) => {
  * Get actor by id
  */
 export const getActor = (id: number) => {
-	return get<Crew_Member>(`/person/${id}`);
+	return get<Actor>(`/person/${id}`);
 };
 
 /**
@@ -105,7 +106,7 @@ export const getActorCredits = (id: number) => {
  * Get Director by id
  */
 export const getDirector = (id: number) => {
-	return get<Crew_Member>(`/person/${id}`);
+	return get<Crew>(`/person/${id}`);
 };
 
 /**

@@ -1,4 +1,5 @@
-export type Crew_Member = {
+export type Actor = {
+	credits: any;
 	biography: string;
 	birthday: string;
 	deathday: string | null;
