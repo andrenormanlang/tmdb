@@ -46,7 +46,7 @@ const DirectorAndCast: React.FC<DirectorAndCastProps> = ({ movieData }) => {
       </Row>
       <h2>Main Cast</h2>
       <Row xs={2} md={4} className="g-4">
-        {movieData.credits.cast.slice(0, 5).map((cast) => (
+        {movieData.credits.cast.slice(0, 10).map((cast) => (
           <Col key={cast.credit_id}>
             <Card className="movie-card">
               {cast.profile_path ? (

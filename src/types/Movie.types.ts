@@ -62,6 +62,14 @@ export type SimilarMovie = {
 	vote_count: number;
 };
 
+
+
+export type Credits = {
+	cast: CastCredit[];
+	crew: CrewCredit[];
+};
+
+
 export type CrewCredit = {
 	id: number;
 	department: string;
@@ -81,11 +89,6 @@ export type CrewCredit = {
 	vote_average: number;
 	genre_ids: number[];
 	poster_path: string | null;
-};
-
-export type Credits = {
-	cast: CastCredit[];
-	crew: CrewCredit[];
 };
 
 export type CastCredit = {
