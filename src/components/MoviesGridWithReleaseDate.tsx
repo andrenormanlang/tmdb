@@ -12,7 +12,7 @@ const MoviesGridWithReleaseDate: React.FC<MoviesGridWithReleaseDateProps> = ({
 }) => {
 	return (
 		<Container>
-			<Row lg={5} md={5} sm={2} className="g-2">
+			<Row lg={5} md={4} sm={2} className="g-2">
 				{movies.map((movie) => (
 					<Col key={movie.id}>
 						<MovieCardWithReleaseDate movie={movie} />
