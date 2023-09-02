@@ -82,7 +82,7 @@ const Actor = () => {
 												</RouterLink>
 											</Card.Title>
 											<Card.Subtitle className="mt-2 person-character">
-												as {credit.character}
+												{credit.know_for_department!== 'directing' ? `as ${credit.character}` : null}
 											</Card.Subtitle>
 										</Card.Body>
 									</Card>

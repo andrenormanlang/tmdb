@@ -6,7 +6,7 @@ import { MovieType } from "../types/Movie.types";
 import { Genres, Movies } from "../types/tmdb.types";
 import { Credits } from "../types/Movie.types";
 import { Actor } from "../types/Actor.type";
-import { Crew } from "../types/Movie.types";
+import { CrewCredit } from "../types/Movie.types";
 
 const BASE_URL = "https://api.themoviedb.org/3";
 const VITE_ACCESS_TOKEN = import.meta.env.VITE_ACCESS_TOKEN;
@@ -106,7 +106,7 @@ export const getActorCredits = (id: number) => {
  * Get Director by id
  */
 export const getDirector = (id: number) => {
-	return get<Crew>(`/person/${id}`);
+	return get<CrewCredit>(`/person/${id}`);
 };
 
 /**

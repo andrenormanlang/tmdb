@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import useDirector from "../hooks/useDirector";
 import photoNotAvailable from "../assets/images/photo-not-available.svg";
-import { Crew } from "../types/Movie.types";
+import { CrewCredit } from "../types/Movie.types";
 
 const Director = () => {
 	const { id } = useParams<{ id?: string }>();
@@ -20,7 +20,7 @@ const Director = () => {
 
 	if (directorData && directorData.length > 0) {
 		const director = directorData.find(
-			(crewMember: Crew) => crewMember.job === "Director"
+			(crewMember: CrewCredit) => crewMember.job === "Director"
 		);
 
 		if (director) {
@@ -50,7 +50,7 @@ const Director = () => {
 		}
 	}
 
-	return null; 
+	return null;
 };
 
 export default Director;

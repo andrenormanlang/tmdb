@@ -19,15 +19,15 @@ const Latest = () => {
 	const movieResults = data?.results ?? [];
 
 	// Sort the movies by release date in descending order
-	const sortedMovies = [...movieResults].sort(
-		(a, b) =>
-			Number(new Date(b.release_date)) - Number(new Date(a.release_date))
-	);
+	// const sortedMovies = [...movieResults].sort(
+	// 	(a, b) =>
+	// 	  Number(new Date(b.release_date)) - Number(new Date(a.release_date))
+	//   );
 
 	return (
 		<>
 			<h1 className="mb-4">New Releases!</h1>
-			<MoviesGridWithReleaseDate movies={sortedMovies} />;
+			<MoviesGridWithReleaseDate movies={movieResults} />;
 		</>
 	);
 };

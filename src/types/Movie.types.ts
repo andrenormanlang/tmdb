@@ -15,8 +15,8 @@ export type MovieType = {
 	vote_average: number;
 	vote_count: number;
 	credits: {
-		crew: Crew[];
-		cast: Cast[];
+		crew: CrewCredit[];
+		cast: CastCredit[];
 	};
 	similar: {
 		page: number;
@@ -26,7 +26,12 @@ export type MovieType = {
 	};
 };
 
-export type Cast = {
+export type Credits =   {
+	crew: CrewCredit[];
+	cast: CastCredit[];
+};
+
+export type CastCredit = {
 	poster_path: any;
 	title: string | null;
 	id: number;
@@ -34,15 +39,17 @@ export type Cast = {
 	credit_id: string;
 	name: string;
 	profile_path: string | null;
+	know_for_department: string;
 };
 
-export type Crew = {
+export type CrewCredit = {
 	id: number;
 	department: string;
 	original_language: string;
 	job: string;
 	name: string;
 	profile_path: string | null;
+	know_for_department: string;
 };
 
 export type SimilarMovie = {
@@ -63,49 +70,3 @@ export type SimilarMovie = {
 };
 
 
-
-export type Credits = {
-	cast: CastCredit[];
-	crew: CrewCredit[];
-};
-
-
-export type CrewCredit = {
-	id: number;
-	department: string;
-	original_language: string;
-	episode_count: number;
-	job: string;
-	overview: string;
-	origin_country: string[];
-	original_name: string;
-	vote_count: number;
-	name: string;
-	media_type: string;
-	popularity: number;
-	credit_id: string;
-	backdrop_path: string | null;
-	first_air_date: string | null;
-	vote_average: number;
-	genre_ids: number[];
-	poster_path: string | null;
-};
-
-export type CastCredit = {
-	character: string;
-	credit_id: string;
-	release_date: string;
-	vote_count: number;
-	video: boolean;
-	adult: boolean;
-	vote_average: number;
-	title: string;
-	genre_ids: number[];
-	original_language: string;
-	original_title: string;
-	popularity: number;
-	id: number;
-	backdrop_path: string | null;
-	overview: string;
-	poster_path: string[];
-};
