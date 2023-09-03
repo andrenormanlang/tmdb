@@ -20,7 +20,7 @@ const instance = axios.create({
 	},
 	params: {
 		include_adult: "false",
-		region: "de",
+		region: "se",
 		language: "en-US",
 	},
 });
