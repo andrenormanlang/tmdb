@@ -39,7 +39,7 @@ export type CastCredit = {
 	credit_id: string;
 	name: string;
 	profile_path: string | null;
-	know_for_department: string;
+	known_for_department: string;
 };
 
 export type CrewCredit = {
@@ -49,7 +49,7 @@ export type CrewCredit = {
 	job: string;
 	name: string;
 	profile_path: string | null;
-	know_for_department: string;
+	known_for_department: string;
 };
 
 export type SimilarMovie = {
