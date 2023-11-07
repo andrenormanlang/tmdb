@@ -20,8 +20,8 @@ const instance = axios.create({
 	},
 	params: {
 		// include_adult: "false",
-		region: "BR",
-		language: "en-US",
+		region: "US",
+		// language: "en-US",
 	},
 });
 /**
