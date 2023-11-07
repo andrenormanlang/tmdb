@@ -19,8 +19,8 @@ const instance = axios.create({
 		Accept: "application/json",
 	},
 	params: {
-		include_adult: "false",
-		region: "se",
+		// include_adult: "false",
+		region: "US",
 		language: "en-US",
 	},
 });
